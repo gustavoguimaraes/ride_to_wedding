@@ -1,0 +1,25 @@
+<h1>Ride Info</h1>
+
+<%= form_for :rides do |r| %>
+
+  <p>
+    <%= r.label :name %>
+    <%= r.text_field :name %>
+  </p>
+
+  <p>
+    <%= r.label :status %>
+    <%= select_tag :status, options_for_select(@status) %>
+  </p>
+
+  <p>
+    <%= r.label :origin %>
+    <%= r.text_field :orign %>
+  </p>
+
+  <p>
+    <%= r.label :contact_info %>
+    <%= r.text_field :name %>
+  </p>
+
+  <% end %>
