@@ -4,4 +4,5 @@ class Rides < ActiveRecord::Base
   def self.status
     ["Rider", "Driver"]
   end
+
 end

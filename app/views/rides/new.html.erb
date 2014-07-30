@@ -1,6 +1,6 @@
 <h1>Ride Info</h1>
 
-<%= form_for :rides do |r| %>
+<%= form_for :ride, url: rides_path do |r| %>
 
   <p>
     <%= r.label :name %>
@@ -9,17 +9,19 @@
 
   <p>
     <%= r.label :status %>
-    <%= select_tag :status, options_for_select(@status) %>
+    <%= r.select :status, options_for_select(@status) %>
   </p>
 
   <p>
     <%= r.label :origin %>
-    <%= r.text_field :orign %>
+    <%= r.text_field :origin %>
   </p>
 
   <p>
     <%= r.label :contact_info %>
-    <%= r.text_field :name %>
+    <%= r.text_field :contact_info %>
   </p>
+
+  <p> <%= r.submit %> </p>
 
   <% end %>
