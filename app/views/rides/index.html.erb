@@ -1,0 +1,22 @@
+<h1>Rides</h1>
+
+<% @rides.each do |r| %>
+<table>
+
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Leaving From</th>
+    <th>Contact Info</th>
+
+  </tr>
+<%= link_to "Edit", edit_ride_path(r) %>
+    <td><%= r.name%></td>
+    <td><%= r.status%></td>
+    <td><%= r.origin%></td>
+    <td><%= r.contact_info%></td>
+
+</table>
+</br>
+
+<% end %>

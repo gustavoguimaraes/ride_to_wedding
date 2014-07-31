@@ -15,6 +15,18 @@ class RidesController < ApplicationController
     redirect_to @ride
   end
 
+  def update
+    @ride = Rides.find(params[:id])
+
+    @ride.update(ride_params)
+    redirect to @ride
+  end
+
+  def edit
+    @status = Rides.status
+    @ride = Rides.find(params[:id])
+  end
+
   def show
     @ride = Rides.find(params[:id])
   end

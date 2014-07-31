@@ -1,4 +1,11 @@
-<h1><%= @ride.name %></h1>
-<div><%= @ride.status %></div>
-<div><%= @ride.origin %></div>
-<div><%= @ride.contact_info %></div>
+<h1>Your Info has been saved</h1>
+
+<p> Name: <strong><%= @ride.name %></strong></p>
+
+<p>Type: <strong><%= @ride.status %></strong></p>
+<p>Going to the wedding from: <strong><%= @ride.origin %></strong></p>
+<p>Contact Information: <strong><%= @ride.contact_info %></strong></p>
+
+<%= link_to "Edit", edit_ride_path(@ride) %>
+
+<%= link_to "Index", rides_path %>

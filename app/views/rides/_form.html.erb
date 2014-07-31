@@ -1,0 +1,26 @@
+<%= form_for :ride do |r| %>
+
+  <p>
+    <%= r.label :name %>
+    <%= r.text_field :name %>
+  </p>
+
+  <p>
+    <%= r.label :status %>
+    <%= r.select :status, options_for_select(@status) %>
+  </p>
+
+  <p>
+    <%= r.label :origin %>
+    <%= r.text_field :origin %>
+  </p>
+
+  <p>
+    <%= r.label :contact_info %>
+    <%= r.text_field :contact_info %>
+  </p>
+
+  <p> <%= r.submit %> </p>
+
+  <% end %>
+
