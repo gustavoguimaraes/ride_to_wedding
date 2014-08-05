@@ -1,5 +1,9 @@
 <h1>Edit Ride Info</h1>
 
-<%= render "form" %>
+<%= form_for :ride, url: ride_path(@ride), method: :patch do |f| %>
 
- <%=link_to "Index", rides_path%>
+  <%= render partial: "form", locals: { form: f} %>
+
+<% end %>
+
+<%=link_to "Index", rides_path%>

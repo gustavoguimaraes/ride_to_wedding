@@ -1,26 +1,25 @@
-<%= form_for :ride do |r| %>
+<p>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+</p>
 
-  <p>
-    <%= r.label :name %>
-    <%= r.text_field :name %>
-  </p>
+<p>
+  <%= form.label :status %>
+  <%= form.select :status, options_for_select(@status) %>
+</p>
 
-  <p>
-    <%= r.label :status %>
-    <%= r.select :status, options_for_select(@status) %>
-  </p>
+<p>
+  <%= form.label :origin %>
+  <%= form.text_field :origin %>
+</p>
 
-  <p>
-    <%= r.label :origin %>
-    <%= r.text_field :origin %>
-  </p>
+<p>
+  <%= form.label :contact_info %>
+  <%= form.text_field :contact_info %>
+</p>
 
-  <p>
-    <%= r.label :contact_info %>
-    <%= r.text_field :contact_info %>
-  </p>
+<p> <%= form.submit %> </p>
 
-  <p> <%= r.submit %> </p>
 
-  <% end %>
+
 

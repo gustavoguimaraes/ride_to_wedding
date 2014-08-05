@@ -1,3 +1,37 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.background {
+    background-image: url('https://scontent-b.xx.fbcdn.net/hphotos-xpf1/t31.0-8/1518648_10104082737233790_292246991_o.jpg');
+    background-repeat:no-repeat;
+    /* custom background-position */
+    background-position:50% 50%;
+}
+
+/* fullscreen setup */
+html, body {
+    /* give this to all tags from html to .fullscreen */
+    height:100%;
+}
+
+.fullscreen {
+    width:100%;
+    min-height:100%;
+}
+
+.content {
+    // display: table-cell;
+    position:relative;
+    color: white;
+    font-size: 80px;
+    top: 200px;
+    vertical-align:middle;
+    text-align:center;
+}
+
+.buttons {
+  color: blue;
+  position: relative;
+  left: 450px;
+  top: 250px;
+}

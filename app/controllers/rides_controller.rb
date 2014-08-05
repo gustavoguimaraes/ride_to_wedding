@@ -2,6 +2,7 @@ class RidesController < ApplicationController
 
   def index
     @rides = Rides.all
+    @ride = Rides.new
   end
 
   def new
@@ -19,7 +20,7 @@ class RidesController < ApplicationController
     @ride = Rides.find(params[:id])
 
     @ride.update(ride_params)
-    redirect to @ride
+    redirect_to @ride
   end
 
   def edit
@@ -29,6 +30,13 @@ class RidesController < ApplicationController
 
   def show
     @ride = Rides.find(params[:id])
+  end
+
+  def destroy
+    @ride = Rides.find(params[:id])
+    @ride.destroy
+
+    redirect_to rides_path
   end
 
   private
