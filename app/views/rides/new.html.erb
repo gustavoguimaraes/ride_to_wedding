@@ -1,9 +1,9 @@
-<h1>Ride Info</h1>
+<h1 class="letter-blue">How You're Getting There</h1>
 
-<%= form_for :ride, url: rides_path do |f| %>
+<div class="center-form">
+  <%= form_for :ride, url: rides_path do |f| %>
+    <%= render partial: "form", locals: { form: f} %>
+  <% end %>
 
-  <%= render partial: "form", locals: { form: f} %>
-
-<% end %>
-
-<%= link_to 'Back', rides_path %>
+  <%= link_to 'Back', rides_path %>
+</div>

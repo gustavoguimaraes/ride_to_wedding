@@ -1,27 +1,85 @@
-<div><%=link_to "Create Ride", new_ride_path%></div>
+<div class="corner-more-relevant"><%=link_to "Add Your Name To List Here", new_ride_path%></div>
 
-<h1>Rides</h1>
+<% unless @matches.empty? %>
 
-<% @rides.each do |r| %>
-<table>
+  <h1 class="letter-blue">Matches</h1>
 
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Leaving From</th>
-    <th>Contact Info</th>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>status</th>
+        <th>Needs Ride From</th>
+        <th>Contact Info</th>
 
-  </tr>
+      </tr>
+    </thead>
 
-    <td><%= r.name%></td>
-    <td><%= r.status%></td>
-    <td><%= r.origin%></td>
-    <td><%= r.contact_info%></td>
-    <td><%= link_to "Edit", edit_ride_path(r) %></td>
-    <td><%= link_to "Delete", ride_path(r), method: :delete, data: {confirm: "Are you positive?"} %></td>
-
-
-</table>
-</br>
+  <% @matches.each do |r| %>
+    <tbody>
+      <tr>
+        <td><%= r.name%></td>
+        <td><%= r.status%></td>
+        <td><%= r.origin%></td>
+        <td><%= r.contact_info%></td>
+      </tr>
+    </tbody>
+   <% end %>
+  </table>
 
 <% end %>
+
+<h1 class="letter-blue">Who needs a ride?</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Needs Ride From</th>
+      <th>Contact Info</th>
+
+    </tr>
+  </thead>
+
+<% @riders.each do |r| %>
+  <tbody>
+    <tr>
+      <td><%= r.name%></td>
+      <td><%= r.origin%></td>
+      <td><%= r.contact_info%></td>
+      <td><%= link_to "Edit", edit_ride_path(r) %></td>
+      <td><%= link_to "Delete", ride_path(r), method: :delete, data: {confirm: "Are you positive?"} %></td>
+    </tr>
+  </tbody>
+ <% end %>
+</table>
+
+<h1 class="letter-blue">Who is driving?</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Driving From</th>
+      <th>Contact Info</th>
+
+    </tr>
+  </thead>
+
+<% @drivers.each do |r| %>
+  <tbody>
+    <tr>
+      <td><%= r.name%></td>
+      <td><%= r.origin%></td>
+      <td><%= r.contact_info%></td>
+      <td><%= link_to "Edit", edit_ride_path(r) %></td>
+      <td><%= link_to "Delete", ride_path(r), method: :delete, data: {confirm: "Are you positive?"} %></td>
+    </tr>
+  </tbody>
+ <% end %>
+</table>
+
+
+
+
+

@@ -1,8 +1,5 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 .background {
-    background-image: url('https://scontent-b.xx.fbcdn.net/hphotos-xpf1/t31.0-8/1518648_10104082737233790_292246991_o.jpg');
+    background-image: url('https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xpa1/t31.0-8/1557212_10104082058628720_493792891_o.jpg');
     background-repeat:no-repeat;
     /* custom background-position */
     background-position:50% 50%;
@@ -20,18 +17,34 @@ html, body {
 }
 
 .content {
-    // display: table-cell;
+    background: linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     position:relative;
     color: white;
     font-size: 80px;
     top: 200px;
     vertical-align:middle;
     text-align:center;
+  .letter-decor{
+    color: #899cf0;
+  }
 }
 
+footer {
+  background: linear-gradient(top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  position:absolute;
+  color: white;
+  font-size: 20px;
+  top: 90%;
+  left: 80%;
+  text-align:center;
+}
 .buttons {
-  color: blue;
+  color: #899cf0;
   position: relative;
   left: 450px;
   top: 250px;
+
+  .agument-word{
+    font-size: 20px;
+  }
 }

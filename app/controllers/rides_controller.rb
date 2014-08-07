@@ -1,8 +1,9 @@
 class RidesController < ApplicationController
 
   def index
-    @rides = Rides.all
-    @ride = Rides.new
+    @riders = Rides.find_all_riders
+    @drivers = Rides.find_all_drivers
+    @matches = Rides.matches
   end
 
   def new
@@ -11,16 +12,22 @@ class RidesController < ApplicationController
 
   def create
     @ride = Rides.new(ride_params)
-
-    @ride.save
-    redirect_to @ride
+    @status = Rides.status
+    if @ride.save
+      redirect_to rides_path
+    else
+      render "new"
+    end
   end
 
   def update
     @ride = Rides.find(params[:id])
 
-    @ride.update(ride_params)
-    redirect_to @ride
+    if @ride.update(ride_params)
+      redirect_to rides_path
+    else
+      render "edit"
+    end
   end
 
   def edit
