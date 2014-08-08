@@ -9,8 +9,18 @@
 </p>
 
 <p>
-  <%= form.label "Leave From" %>
+  <%= form.label "Departing From" %>
   <%= form.text_field :origin %>
+</p>
+
+<p>
+  <%= form.label "Departure Date" %>
+  <%= form.datetime_local_field :departure_date %>
+</p>
+
+<p>
+  <%= form.label "Returning Date" %>
+  <%= form.datetime_local_field :return_date %>
 </p>
 
 <p>

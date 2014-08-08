@@ -10,6 +10,8 @@
         <th>Name</th>
         <th>status</th>
         <th>Needs Ride From</th>
+        <th>Departure Date</th>
+        <th>Return Date</th>
         <th>Contact Info</th>
 
       </tr>
@@ -21,6 +23,8 @@
         <td><%= r.name%></td>
         <td><%= r.status%></td>
         <td><%= r.origin%></td>
+        <td><%= r.departure_date.strftime("%A %B %d, %Y %I:%M%p") if r.departure_date%></td>
+        <td><%= r.return_date.strftime("%A %B %d, %Y %I:%M%p") if r.return_date%></td>
         <td><%= r.contact_info%></td>
       </tr>
     </tbody>
@@ -36,6 +40,8 @@
     <tr>
       <th>Name</th>
       <th>Needs Ride From</th>
+      <th>Departure Date</th>
+      <th>Return Date</th>
       <th>Contact Info</th>
 
     </tr>
@@ -46,6 +52,8 @@
     <tr>
       <td><%= r.name%></td>
       <td><%= r.origin%></td>
+       <td><%= r.departure_date.strftime("%A %B %d, %Y %I:%M%p") if r.departure_date%></td>
+      <td><%= r.return_date.strftime("%A %B %d, %Y %I:%M%p") if r.return_date%></td>
       <td><%= r.contact_info%></td>
       <td><%= link_to "Edit", edit_ride_path(r) %></td>
       <td><%= link_to "Delete", ride_path(r), method: :delete, data: {confirm: "Are you positive?"} %></td>
@@ -61,8 +69,9 @@
     <tr>
       <th>Name</th>
       <th>Driving From</th>
+      <th>Departure Date</th>
+      <th>Return Date</th>
       <th>Contact Info</th>
-
     </tr>
   </thead>
 
@@ -71,6 +80,8 @@
     <tr>
       <td><%= r.name%></td>
       <td><%= r.origin%></td>
+      <td><%= r.departure_date.strftime("%A %B %d, %Y %I:%M%p") if r.departure_date%></td>
+      <td><%= r.return_date.strftime("%A %B %d, %Y %I:%M%p") if r.return_date%></td>
       <td><%= r.contact_info%></td>
       <td><%= link_to "Edit", edit_ride_path(r) %></td>
       <td><%= link_to "Delete", ride_path(r), method: :delete, data: {confirm: "Are you positive?"} %></td>
