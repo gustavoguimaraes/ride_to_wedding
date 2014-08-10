@@ -27,8 +27,15 @@ gem 'rails_12factor'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 group :development do
+  gem 'rspec-rails', '~> 3.0.0'
   gem 'spring'
   gem 'pry'
+end
+
+group :test do
+  gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
 end
 
 # Use ActiveModel has_secure_password
